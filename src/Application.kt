@@ -25,6 +25,10 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
+        get("/") {
+            call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
+        }
+
         get("/json/jackson") {
             data class Book(val title: String, val author: String)
             val nineteenEightyFour = Book("1984", "George Orwell")
